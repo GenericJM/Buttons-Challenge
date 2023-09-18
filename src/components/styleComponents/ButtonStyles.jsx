@@ -6,11 +6,14 @@ const gray = "#e0e0e0"
 const darkGray = "#828282"
 const black = "#3F3F3F"
 const hoverColor = "#AEAEAE"
+const disabled = css`
+color: ${props => (props.$variant === variants.outline || (props.$variant === variants.text && !props.$disabled)) ? "#3D5AFE" : ""};
+color:${props => props.$disabled ? "#9E9E9E" : black};
 
+`
 const outlineortxt = css`
 background-color:${props => (props.$variant === variants.outline || props.$variant === variants.text) ? "transparent" : ""};
-color: ${props => (props.$variant === variants.outline || (props.$variant === variants.text && !props.$disabled)) ? "#3D5AFE" : ""};
- 
+${disabled}
 `
 const text = css`
 border: ${props => props.$variant === variants.text ? "none" : ""};
@@ -43,7 +46,6 @@ padding: 0.7em 1.5em;
 border-radius: 0.5em;
 border: none;
 background-color:${props => props.$color || gray};
-color:${props => props.$disabled ? "#9E9E9E" : black};
 box-shadow: ${props => !props.$disableshadow ? "0px 3px 3px #e8e8e8" : "none"};
 
 /*outline || text*/
@@ -57,14 +59,18 @@ ${text}
  padding: ${props=>props.$size===size.md ? "1em 2em":""};
  padding: ${props=>props.$size===size.lg ? "1.5em 3em":""};
  /*color*/
+
  ${bgColor}
+ ${disabled}
+
  &:hover{
-   ${props=>props.$hover ? hover:"" }
+   ${props=>(props.$hover && !props.$disabled) ? hover:"" }
  }
 `
 export const Hover = styled(ButtonStyle)`  
  ${hover}
 `
+
 
 
 
