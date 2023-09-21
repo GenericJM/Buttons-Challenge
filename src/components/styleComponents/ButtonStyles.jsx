@@ -6,9 +6,11 @@ const gray = "#e0e0e0"
 const darkGray = "#828282"
 const black = "#3F3F3F"
 const hoverColor = "#AEAEAE"
+
 const disabled = css`
 color: ${props => (props.$variant === variants.outline || (props.$variant === variants.text && !props.$disabled)) ? "#3D5AFE" : ""};
-color:${props => props.$disabled ? "#9E9E9E" : black};
+color:${props => props.$disabled && "#9E9E9E"};
+background: ${props=>(props.$disabled && props.$variant !== variants.text) && gray};  
 
 `
 const outlineortxt = css`

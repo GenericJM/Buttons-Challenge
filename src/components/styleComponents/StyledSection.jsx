@@ -26,7 +26,7 @@ export const Article = styled.article`
    
 `
 export const Div = styled.div`
-  align-self:${prop => prop.$alignSelf || "none"};
+  align-self:${prop => prop.$alignSelf || "none"}; 
   ${margin} ;
 
 `
