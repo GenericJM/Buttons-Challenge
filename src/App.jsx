@@ -5,18 +5,19 @@ import { ButtonStyle } from './components/styleComponents/ButtonStyles'
 
 function App() {  
   
-  return <main className='flex'>
+  return<> <main className='flex'>
     
     <aside className='aside'>
   
       <ul className='ul'>
-     <li className='li liTitle'> <a href='https://devchallenges.io/' target='blank'>Devchallenges.io </a></li>
-     <li className='li'> <Button variant="text" text='Colors' /></li>
-     <li className='li'> <Button variant="text" text='Typography'/></li>
-     <li className='li'> <Button variant="text" text='Spaces'/></li>
-     <li className='li'> <Button variant="text" text='Buttons'/></li>
-     <li className='li'> <Button variant="text" text='Inputs' /></li>
-     <li className='li'> <Button variant="text" text='Grid'/></li>
+     <li className='li liTitle'> <a className="Devchallenges" href='https://devchallenges.io/' target='blank'><spam className="spam">Dev</spam>challenges.io </a></li>
+    
+     <li className='li'> <a className='asideLink'>Colors</a></li>
+     <li className='li'> <a className='asideLink'>Typography</a></li>
+     <li className='li'> <a className='asideLink'>Spaces</a></li>
+     <li className='li'> <a className='asideLink'>Buttons</a></li>
+     <li className='li'> <a className='asideLink'>Inputs</a></li>
+     <li className='li'> <a className='asideLink'>Grid</a></li>
 
       </ul>
       
@@ -27,9 +28,13 @@ function App() {
      
     <Buttons />  
 
-    </div>
-    
- </main>
+    </div>   
+  
+  </main>
+  <footer className="footer">
+    <h5 class="text">created by <a target="_blank" href="https://devchallenges.io/portfolio/GenericJM">GenericJM</a> - devChallenges.io</h5>
+  </footer>
+</>
 }
 
 export default App
